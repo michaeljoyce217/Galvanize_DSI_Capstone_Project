@@ -18,7 +18,6 @@ This project predicts spikes in crime rate by neighborhood in Vancouver, BC, Can
 
 The Vancouver police ran a six month pilot program in 2016 that attempted to predict property crimes by neighborhood. This led to a significant drop in property crime rates  ([ref](http://mediareleases.vpd.ca/2017/07/21/vancouver-police-adopt-new-technology-to-predict-property-crime/)) and has since been adopted as an ongoing policing tactic. The public can access past data but does not have access to the results of the predictive model.
 
-<img align="left" src="resources/256px-VPD_and_perp.png" width="300">
 
 
 This capstone project will attempt to improve on the previous model, considering additional factors such as street drug prices, drug use rate, weather, and dates of social services payments (more to be determined). Non-property based crimes will also be analyzed and a model built to predict such crimes.
