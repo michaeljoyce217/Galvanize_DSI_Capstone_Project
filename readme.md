@@ -1,6 +1,6 @@
 
 ## Data Science Immersive Capstone Project - Crime Prediction in Vancouver, Canada
-This project predicts spikes in crime rate by neighborhood in Vancouver, BC, Canada. The goal is to proactively reduce criminal activity through targeted police prevention and intervention tactics.
+This project predicts spikes in crime rates by neighborhood in Vancouver, BC, Canada. The goal is to proactively reduce criminal activity through targeted police prevention and intervention tactics.
 
 
 
