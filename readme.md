@@ -9,12 +9,17 @@ This project predicts spikes in crime rate by neighborhood in Vancouver, BC, Can
 
 
 ## Problem definition
-<img align="left" src="resources/4279439952_76eae82b20_o.png" width="300"> Vancouver is routinely rated one of the world's most livable cities ([ref](https://biv.com/article/2017/08/vancouver-third-most-livable-city-world-economist)). However, the city has some of the highest heroin and other illegal drug consumption rates in North America ([ref](https://en.wikipedia.org/wiki/Downtown_Eastside)). As a result, the crime rate is high by Canadian standards (reference). The objective of this predictive model is to aid planning departments in the allocation of resources, such as police and emergency services.
+<img align="left" src="resources/4279439952_76eae82b20_o.png" width="200"> Vancouver is routinely rated one of the world's most livable cities ([ref](https://biv.com/article/2017/08/vancouver-third-most-livable-city-world-economist)). However, the city has some of the highest heroin and other illegal drug consumption rates in North America ([ref](https://en.wikipedia.org/wiki/Downtown_Eastside)).
+
+<br>
+<br>
+
+<img align="right" src="resources/256px-VPD_and_perp.png" width="300">As a result, the crime rate is high by Canadian standards (reference). The objective of this predictive model is to aid planning departments in the allocation of resources, such as police and emergency services.
 
 The Vancouver police ran a six month pilot program in 2016 that attempted to predict property crimes by neighborhood. This led to a significant drop in property crime rates  ([ref](http://mediareleases.vpd.ca/2017/07/21/vancouver-police-adopt-new-technology-to-predict-property-crime/)) and has since been adopted as an ongoing policing tactic. The public can access past data but does not have access to the results of the predictive model.
 
 <img align="left" src="resources/256px-VPD_and_perp.png" width="300">
-256px-VPD_and_perp.png
+
 
 This capstone project will attempt to improve on the previous model, considering additional factors such as street drug prices, drug use rate, weather, and dates of social services payments (more to be determined). Non-property based crimes will also be analyzed and a model built to predict such crimes.
 
