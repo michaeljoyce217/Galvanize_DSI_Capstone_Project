@@ -27,10 +27,10 @@ This capstone project will be submitted to the VPD upon completion, in an attemp
 
 ## Data collection, processing, and storage
 
-Data will be collected from the Vancouver Police Department's crime database (560,000 crimes)
-([ref](http://data.vancouver.ca/datacatalogue/crime-data.htm)), the United Nations report on street drug prices (request submitted for direct access, web-scraping if denied), weather forecasts, and publicly available calendars of events (more to be determined).
+Data will be collected from the Vancouver Police Department's crime database (491,459 property related crimes since January 1, 2003),
+([ref](http://data.vancouver.ca/datacatalogue/crime-data.htm)), the United Nations annual report on drug prices, weather forecasts, and publicly available economic data.
 
-Once the predictive model is built, it will be hosted on a web app. Users will be able to input a date, and a predicted crime rate by category will be given for each neighborhood of Vancouver. This model will be updated weekly as the Vancouver Police Department publishes their weekly crime report. This process will run through an EC2 instance on Amazon Web Services.
+Once the predictive model is built, it will be hosted on a webpage that is updated daily. Users will be able to click on any of Vancouver's 24 neighborhoods (shown on a map of Vancouver), and a predicted propery crime rate will be given for that neighborhood. This model will be updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process will run through an EC2 instance on Amazon Web Services.
 
 <br>
 
