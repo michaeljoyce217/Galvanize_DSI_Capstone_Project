@@ -30,7 +30,10 @@ This capstone project will be submitted to the VPD upon completion, in an attemp
 Data will be collected from the Vancouver Police Department's crime database (491,459 property related crimes since January 1, 2003),
 ([ref](http://data.vancouver.ca/datacatalogue/crime-data.htm)), the United Nations annual report on drug prices, weather forecasts, and publicly available economic data.
 
-Once the predictive model is built, it will be hosted on a webpage that is updated daily. Users will be able to click on any of Vancouver's 24 neighborhoods (shown on a map of Vancouver), and a predicted propery crime rate will be given for that neighborhood. This model will be updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process will run through an EC2 instance on Amazon Web Services.
+The predictive model will be demonstrated on a webpage that is updated daily. Users will be able to click on any of Vancouver's 24 neighborhoods (shown on a map of Vancouver), and a predicted property crime rate will be given for that neighborhood. This model will be updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process will run through an EC2 instance on Amazon Web Services.
+
+INSERT GRAPHIC
+
 
 <br>
 
@@ -43,3 +46,13 @@ Once the predictive model is built, it will be hosted on a webpage that is updat
 3) If publicly available, the model could become a tool for criminals. Access might have to be restricted to government officials.
 
 Note that Vancouver has disadvantaged neighborhoods, but they are not racially homogeneous. Therefore, I am confident that this tool will not be used for racial profiling.
+
+
+
+
+## Extensions and improvements
+
+* Examine the predictive model using time series data analysis.
+* The Vancouver Police Department releases the hundred block and street, as well as the latitude and the longitude, of each incident. The Central Business District has a uniquely high crime rate. Build a separate predictive model for this neighborhood that predicts by city block. This is unlikely to be useful in the lower crime neighborhoods.
+
+* The illegal drug possession statistics currently being used are for British Columbia (BC) as a whole. A request has been made to the BC government for data specific to Vancouver.
