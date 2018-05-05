@@ -94,7 +94,60 @@ The models were evaluated using several metrics.
 * Mean average error (MAE)- measurement of error of the model, less affected by outliers (large errors)
 * Root Mean square error (RMSE)- measurement of error of the model, more affected by outliers (large errors)
 
-The first setup involved
+The first train and test setup involved the usual test-train-split on all of the data. The results are given.
+
+Central Business District
+* R2=
+* MAE=
+* RMSE=
+
+All other neighborhoods
+
+Central Business District
+* R2=
+* MAE=
+* RMSE=
+
+The second train and test setup involved training the model on the data from 2003 to 2016 and using the data from 2017 as the test set.
+
+
+Central Business District
+* R2=
+* MAE=
+* RMSE=
+
+All other neighborhoods
+
+Central Business District
+* R2=
+* MAE=
+* RMSE=
+
+<br>
+
+In both setups, the results weren't striking outside the Central Business District but these are relatively low crime areas to begin with (XXX crimes per day segment on average). The results were far better in the high crime Central Business District (XXX crimes per day segment on average), which supports the validity of the model. Ideally these should be investigated
+
+All of these setups were then further evaluated. This involved training the same models on the same setups but with a minimal dataset. This dataset consisted solely of the police data with some basic feature engineering.
+
+* Day of week added only
+* Same day segmentation as above
+* Same neighborhood segmentation as above
+
+It was initially a shock to note that the metrics were very similar in the low crime areas (values in appendix). This might imply that the added data was unnecessary. However, the metrics varied significantly in the Central Business District. Moreover, the feature importance varied greatly between the models, particularly in the high crime Central Business District.
+
+
+
+## Conclusions
+
+The model constructed was predictive in general but much more predictive in the Central Business District. As this is where most of the crime occurs, the model may have significant value to the Vancouver Police Department.
+
+This data should be examined using time series forecasting. This may provide further insight and hopefully increase the predictive power of the model.
+
+The Central Business District should be subdivided and examine further. This is possible as the VPD data gives street, hundred block, latitude and longitude data.
+
+Data should be added or refined to the model inputs (see improvements and extensions below)
+
+<br>
 
 
 ## Delivery of predictions
@@ -102,14 +155,16 @@ The first setup involved
 The predictive model is demonstrated on a webpage that is updated daily. Users are able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next 7 days of predicted property crime rates for all neighborhoods.
 
 This model is updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process is currently run locally but will eventually run through an EC2 instance on Amazon Web Services.
+<br>
+
 
 
 ## Additional applications of this methodology
 
 
 
-
-
+TO BE COMPLETED
+<br>
 
 ## Extensions and improvements
 
@@ -124,3 +179,11 @@ This model is updated daily as weather data proved to be predictive. The Vancouv
 * The price of wholesale heroin given is yearly and for Canada as a whole. Monthly and/or Vancouver specific data would be preferable. A request has been made to the United Nations Office on Drugs and Crime for this information.
 
 * The weather data used is from the (US) National Weather Service for Bellingham airport in Washington. A web-scraping tool will be built to scrape equivalent data for Vancouver, Canada.
+
+
+## Tools used
+
+
+
+TO BE COMPLETED
+<br>
