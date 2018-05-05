@@ -1,5 +1,5 @@
 
-## Data Science Immersive Capstone Project - Crime Prediction in Vancouver, Canada
+## Data Science Immersive Capstone Project - Property Crime Prediction by Neighborhood in Vancouver, Canada
 This project predicts spikes in crime rates by neighborhood in Vancouver, BC, Canada. The goal is to proactively reduce criminal activity through targeted police prevention and intervention tactics.
 
 
@@ -7,18 +7,18 @@ This project predicts spikes in crime rates by neighborhood in Vancouver, BC, Ca
 <br>
 
 
-## Problem definition
+## Overview
 <img align="left" src="resources/4279439952_76eae82b20_o.png" width="200"> Vancouver is routinely rated one of the world's most livable cities ([ref](https://biv.com/article/2017/08/vancouver-third-most-livable-city-world-economist)). However, the city has some of the highest illegal drug consumption rates in North America ([ref](https://en.wikipedia.org/wiki/Downtown_Eastside)).
 
 <br>
 
 <img align="right" src="resources/256px-VPD_and_perp.png" width="200">As a result, the crime rate is high by Canadian standards ([ref](https://globalnews.ca/news/4064656/bc-crime-justice-system-report/)). The objective of this predictive model is to aid planning departments in the allocation of resources, such as police and emergency services.
 
-The Vancouver police ran a six-month pilot program in 2016 that attempted to predict property crimes by neighborhood. This led to a significant drop in property crime rates  ([ref](http://mediareleases.vpd.ca/2017/07/21/vancouver-police-adopt-new-technology-to-predict-property-crime/)) and has since been adopted as an ongoing police tactic. The public can access past data, but does not have access to the results of the predictive model.
+The Vancouver Police Department (VPD) ran a six-month pilot program in 2016 that attempted to predict property crimes by neighborhood. This led to a significant drop in property crime rates  ([ref](http://mediareleases.vpd.ca/2017/07/21/vancouver-police-adopt-new-technology-to-predict-property-crime/)) and has since been adopted as an ongoing police tactic. However, the VPD does not publish its methodology.
 
 
 
-This capstone project will attempt to improve on the previous model, considering additional factors such as street drug prices, drug use rate, weather, and dates of social service payments (more to be determined). Non-property based crimes will also be included in this analysis, and a prediction model will be built with this data.
+This capstone project will be submitted to the VPD upon completion, in an attempt to improve on the previous model. The property crime data published by the VPD will be considered along with data from addtional sources, including illegal drug prices, number of arrests for possession of heroin and cocaine, weather data, and economic data.
 
 <br>
 
