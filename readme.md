@@ -31,17 +31,41 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 
 
 
-## Data collection, processing, and storage
+## Datasets
 
-Data will be collected from the Vancouver Police Department's crime database (491,459 property related crimes since January 1, 2003),
-([ref](http://data.vancouver.ca/datacatalogue/crime-data.htm)), the United Nations annual report on drug prices, weather forecasts, and publicly available economic data.
+* The primary data is collected weekly from the Vancouver Police Department's crime database (491,459 property related crimes from 2003 to 2017). ([ref](http://data.vancouver.ca/datacatalogue/crime-data.htm))
+* Climate data is collected daily from the (US) National Weather Service with Bellingham airport in Washington acting as a substitute for Vancouver weather. The two cities are 50 miles apart and have very similar climates. (This will be changed to Vancouver specific data in future.) ([ref](https://www.weather.gov/help-past-weather)
+* Data pertaining to the number of arrests for possession of heroin and cocaine and economic data, such as unemployment rates, the consumer price index and gross national product, is taken from Statistics Canada. ([ref](http://www5.statcan.gc.ca/researchers-chercheurs/index.action?lang=eng&univ=7&search=&start=1&end=25&sort=0&themeId=0&date=&series=&author=&themeState=-1&dateState=-1&seriesState=-1&authorState=-1&showAll=false)  
+* Data on the price of wholesale heroin given is taken from United Nations Office on Drugs and Crime.
 
-The predictive model will be demonstrated on a webpage that is updated daily. Users will be able to click on any of Vancouver's 24 neighborhoods (shown on a map of Vancouver), and a predicted property crime rate will be given for that neighborhood. This model will be updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process will run through an EC2 instance on Amazon Web Services.
+
+
 
 INSERT GRAPHIC
 
 
 <br>
+
+## Methodology
+
+To be inserted
+
+<br>
+
+## Analysis of results
+
+To be inserted
+
+<br>
+
+
+
+## Delivery of predictions
+
+The predictive model will be demonstrated on a webpage that is updated daily. Users will be able to click on any of Vancouver's 24 neighborhoods (shown on a map of Vancouver), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next 7 days of predicted property crime rates for all neighborhoods.
+
+This model will be updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process will run through an EC2 instance on Amazon Web Services.
+
 
 ## Additional applications of this methodology
 
