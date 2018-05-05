@@ -20,6 +20,12 @@ The Vancouver Police Department (VPD) ran a six-month pilot program in 2016 that
 
 This capstone project will be submitted to the VPD upon completion, in an attempt to improve on the previous model. The property crime data published by the VPD will be considered along with data from addtional sources, including illegal drug prices, number of arrests for possession of heroin and cocaine, weather data, and economic data.
 
+My interest in this project is derived from my love of my hometown. It is a wonderful city and beloved by many. However, it is scarred by its drug problem and the inherent property crimes that come with drug addiction. The area with the worst difficulties is colloquially called the Downtown Eastside but the VPD refers to it as the Central Business District. ([ref](https://en.wikipedia.org/wiki/Downtown_Eastside/))
+
+Many different approaches are being tried to attempt to alleviate this problem. ([ref](http://www.cbc.ca/radio/ondrugs/city-on-drugs-the-dark-pull-of-vancouver-s-downtown-eastside-1.4229455)) I am hoping that I can play a small part in these efforts.
+
+Note that Vancouver has disadvantaged neighborhoods, but they are not racially homogeneous. Therefore, I am confident that this tool will not be used for racial profiling.
+
 <br>
 
 
@@ -37,7 +43,7 @@ INSERT GRAPHIC
 
 <br>
 
-## Potential problems
+## Additional applications of this methodology
 
 1) I especially want to study the correlation between crime and street drug prices. If the UN won't authorize the data use, web scraping could be slow.
 
@@ -53,6 +59,11 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 ## Extensions and improvements
 
 * Examine the predictive model using time series data analysis.
-* The Vancouver Police Department releases the hundred block and street, as well as the latitude and the longitude, of each incident. The Central Business District has a uniquely high crime rate. Build a separate predictive model for this neighborhood that predicts by city block. This is unlikely to be useful in the lower crime neighborhoods.
 
-* The illegal drug possession statistics currently being used are for British Columbia (BC) as a whole. A request has been made to the BC government for data specific to Vancouver.
+* The Central Business District has a uniquely high crime rate, hence has been considered separately in the predictive model. However, the Vancouver Police Department releases the hundred block and street, as well as the latitude and the longitude, of each incident. Build a separate predictive model for this neighborhood that predicts by city block. This is unlikely to be useful in the lower crime neighborhoods.
+
+* The illegal drug possession data currently being used is annually for British Columbia (BC) as a whole. A request has been made to the BC government for monthly data specific to Vancouver.
+
+* The price of wholesale heroin given is yearly and for Canada as a whole. Monthly and/or Vancouver specific data would be preferable. A request has been made to the United Nations Office on Drugs and Crime for this information.
+
+* The weather data used is from the (US) National Weather Service for Bellingham airport in Washington. A web-scraping tool will be built to scrape equivalent data for Vancouver, Canada.
