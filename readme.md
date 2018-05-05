@@ -20,7 +20,7 @@ The Vancouver Police Department (VPD) ran a six-month pilot program in 2016 that
 
 This capstone project will be submitted to the VPD upon completion, in an attempt to improve on the previous model. The property crime data published by the VPD will be considered along with data from addtional sources, including illegal drug prices, number of arrests for possession of heroin and cocaine, weather data, and economic data.
 
-My interest in this project is derived from my love of my hometown. It is a wonderful city and beloved by many. However, it is scarred by its drug problem and the inherent property crimes that come with drug addiction. The area with the worst difficulties is colloquially called the Downtown Eastside but the VPD refers to it as the Central Business District. ([ref](https://www.vice.com/en_ca/article/nev4p8/why-vancouver-has-always-been-an-addiction-ground-zero))
+My interest in this project is derived from my love of my hometown. It is a wonderful city and beloved by many. However, it is scarred by its drug problem and the inherent property crimes that come with drug addiction. The area with the worst difficulties is locally known as the Downtown Eastside but the VPD refers to it as the Central Business District. ([ref](https://www.vice.com/en_ca/article/nev4p8/why-vancouver-has-always-been-an-addiction-ground-zero))
 
 Many different approaches are being tried to attempt to alleviate this problem. ([ref](http://www.cbc.ca/radio/ondrugs/city-on-drugs-the-dark-pull-of-vancouver-s-downtown-eastside-1.4229455)) I am hoping that I can play a small part in these efforts.
 
@@ -34,8 +34,8 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 ## Datasets
 
 * The primary data is collected weekly from the Vancouver Police Department's crime database (491,459 property related crimes from 2003 to 2017). ([ref](http://data.vancouver.ca/datacatalogue/crime-data.htm))
-* Climate data is collected daily from the (US) National Weather Service with Bellingham airport in Washington acting as a substitute for Vancouver weather. The two cities are 50 miles apart and have very similar climates. (This will be changed to Vancouver specific data in future.) ([ref](https://www.weather.gov/help-past-weather)
-* Data pertaining to the number of arrests for possession of heroin and cocaine and economic data, such as unemployment rates, the consumer price index and gross national product, is taken from Statistics Canada. ([ref](http://www5.statcan.gc.ca/researchers-chercheurs/index.action?lang=eng&univ=7&search=&start=1&end=25&sort=0&themeId=0&date=&series=&author=&themeState=-1&dateState=-1&seriesState=-1&authorState=-1&showAll=false)  
+* Climate data is collected daily from the (US) National Weather Service with Bellingham airport in Washington acting as a substitute for Vancouver weather. The two cities are 50 miles apart and have very similar climates. (This will be changed to Vancouver specific data in future.) ([ref](https://www.weather.gov/help-past-weather))
+* Data pertaining to the number of arrests for possession of heroin and cocaine and economic data, such as unemployment rates, the consumer price index and gross national product, is taken from Statistics Canada. ([ref](http://www5.statcan.gc.ca/researchers-chercheurs/index.action?lang=eng&univ=7&search=&start=1&end=25&sort=0&themeId=0&date=&series=&author=&themeState=-1&dateState=-1&seriesState=-1&authorState=-1&showAll=false))  
 * Data on the price of wholesale heroin given is taken from United Nations Office on Drugs and Crime.
 
 
@@ -44,38 +44,63 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 INSERT GRAPHIC
 
 
+The information that follows might be over-technical for some readers. The slideshow presentation is more accessible if that is preferred. (INSERT LINK)
+
 <br>
 
 ## Methodology
 
-To be inserted
+Various feature engineering methods were applied to the data and each variation was tested as outline below. These involved various divisions of the neighborhoods and breaking the day into segments.
+
+Neighborhoods:
+* Division into low crime rate, medium crime rate, and high crime rate subgroups.
+* Division into a subgroup containing only the  Central Business District and  anothe subgroup containing all other neighborhoods.
+
+Day segments:
+* 1200am-759am, 800am-359pm, 4pm-1159pm
+* 1200am-1159am, 1200pm-1159pm
+
+Many machine learning methods were applied to these various setups and the results were recorded.
+
+Regression methods investigated:
+
+* Linear
+* Lasso
+* Logistic
+* Elastic net
+* Bayesian ridge  
+* Random forest
+* Adaptive boosting
+* Bootstrap aggregating
+* Stochastic gradient descent
+* Gradient boosting
+* Neural networks
+* Extreme gradient boosting
+
+The best results were obtained by the division of the neighborhoods into one subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods, and using the 1200am-1159am, 1200pm-1159pm day segmentation.
+
+In terms of models, the best results were achieved using one of the Sci-kit Learn neural network model packages. However, this model was not chosen as it is a "black box" model. That is, determining the importance of certain data features is not clear given this model. Feature importance can be determined using variable subset selection but this is very expensive computationally.
+
+
 
 <br>
 
 ## Analysis of results
 
-To be inserted
-
-<br>
+The best results
 
 
 
 ## Delivery of predictions
 
-The predictive model will be demonstrated on a webpage that is updated daily. Users will be able to click on any of Vancouver's 24 neighborhoods (shown on a map of Vancouver), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next 7 days of predicted property crime rates for all neighborhoods.
+The predictive model is demonstrated on a webpage that is updated daily. Users are able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next 7 days of predicted property crime rates for all neighborhoods.
 
-This model will be updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process will run through an EC2 instance on Amazon Web Services.
+This model is updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process is currently run locally but will eventually run through an EC2 instance on Amazon Web Services.
 
 
 ## Additional applications of this methodology
 
-1) I especially want to study the correlation between crime and street drug prices. If the UN won't authorize the data use, web scraping could be slow.
 
-2) The model might not be predictive of non-property crime, leading to a less impressive result.
-
-3) If publicly available, the model could become a tool for criminals. Access might have to be restricted to government officials.
-
-Note that Vancouver has disadvantaged neighborhoods, but they are not racially homogeneous. Therefore, I am confident that this tool will not be used for racial profiling.
 
 
 
@@ -83,6 +108,8 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 ## Extensions and improvements
 
 * Examine the predictive model using time series data analysis.
+
+* Set up the EC2 instance to update automatically.
 
 * The Central Business District has a uniquely high crime rate, hence has been considered separately in the predictive model. However, the Vancouver Police Department releases the hundred block and street, as well as the latitude and the longitude, of each incident. Build a separate predictive model for this neighborhood that predicts by city block. This is unlikely to be useful in the lower crime neighborhoods.
 
