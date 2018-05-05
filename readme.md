@@ -121,7 +121,11 @@ All other neighborhoods
 
 <br>
 
-In both setups, the results weren't striking outside the Central Business District but these are relatively low crime areas to begin with (2.43 property crimes per day segment on average). The results were far better in the high crime Central Business District (10.59 property crimes per day segment on average), which supports the validity of the model. Ideally these should be investigated
+## Comparison to a less engineered dataset
+
+In both setups, the results weren't striking outside the Central Business District but these are relatively low crime areas to begin with (2.43 property crimes per day segment on average). The results were far better in the high crime Central Business District (10.59 property crimes per day segment on average), which supports the validity of the model.
+
+<br>
 
 All of these setups were then further evaluated. This involved training the same models on the same setups but with a minimal dataset. This dataset consisted solely of the police data with some basic feature engineering.
 
@@ -134,7 +138,7 @@ The first train and test setup involved the usual test-train-split on all of the
 Central Business District
 * R2 = 0.4404134166445236
 * MAE = 3.00166645333
-* RMSE = 3.84530425352                 PUT ALL THIS IN THE APPENDIX!!!!
+* RMSE = 3.84530425352                 
 
 All other neighborhoods
 * R2 = 0.29950300823917786
