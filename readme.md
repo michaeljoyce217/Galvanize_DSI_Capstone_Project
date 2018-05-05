@@ -81,14 +81,20 @@ The best results were obtained by the division of the neighborhoods into one sub
 
 In terms of models, the best results were achieved using one of the Sci-kit Learn neural network model packages. However, this model was not chosen as it is a "black box" model. That is, determining the importance of certain data features is not clear given this model. Feature importance can be determined using variable subset selection but this is very expensive computationally.
 
+The model using extreme gradient boosting came in a close second in all of the metrics used and has a measure of feature importance built in to the associated machine learning package. As a result, this is my model of choice for this project.
+
 
 
 <br>
 
 ## Analysis of results
 
-The best results
+The models were evaluated using several metrics.
+* R-squared (R2)- explains the percentage of variance in the target variable explained by the model
+* Mean average error (MAE)- measurement of error of the model, less affected by outliers (large errors)
+* Root Mean square error (RMSE)- measurement of error of the model, more affected by outliers (large errors)
 
+The first setup involved
 
 
 ## Delivery of predictions
