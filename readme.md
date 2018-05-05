@@ -121,7 +121,7 @@ All other neighborhoods
 
 <br>
 
-In both setups, the results weren't striking outside the Central Business District but these are relatively low crime areas to begin with (XXX crimes per day segment on average). The results were far better in the high crime Central Business District (XXX crimes per day segment on average), which supports the validity of the model. Ideally these should be investigated
+In both setups, the results weren't striking outside the Central Business District but these are relatively low crime areas to begin with (2.43 property crimes per day segment on average). The results were far better in the high crime Central Business District (10.59 property crimes per day segment on average), which supports the validity of the model. Ideally these should be investigated
 
 All of these setups were then further evaluated. This involved training the same models on the same setups but with a minimal dataset. This dataset consisted solely of the police data with some basic feature engineering.
 
