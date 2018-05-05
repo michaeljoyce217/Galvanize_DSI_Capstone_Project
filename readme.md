@@ -51,9 +51,14 @@ The information that follows might be over-technical for some readers. The slide
 
 Various feature engineering methods were applied to the data and each variation was tested as outline below. These involved various divisions of the neighborhoods and breaking the day into segments.
 
-Neighborhoods:
+Two different day segmentations were considered in each model:
+* 1200am-759am, 800am-359pm, 4pm-1159pm
+* 1200am-1159am, 1200pm-1159pm
+
+Neighborhoods were divided in two different ways due to differing crime rates and all models were trained on each subgroup individually:
+
 * Division into low crime rate, medium crime rate, and high crime rate subgroups.
-* Division into a subgroup containing only the  Central Business District and  anothe subgroup containing all other neighborhoods.
+* Division into a subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods.
 
 Day segments:
 * 1200am-759am, 800am-359pm, 4pm-1159pm
@@ -76,7 +81,7 @@ Regression methods investigated:
 * Neural networks
 * Extreme gradient boosting
 
-The best results were obtained by the division of the neighborhoods into one subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods, and using the 1200am-1159am, 1200pm-1159pm day segmentation.
+The best results were obtained by using the 1200am-1159am, 1200pm-1159pm day segmentation and the dividing the neighborhoods into one subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods. Due to differing crime rates, separate models were trained on each subgroup of neighborhoods.
 
 In terms of models, the best results were achieved using one of the Sci-kit Learn neural network model packages. However, this model was not chosen as it is a "black box" model. That is, determining the importance of certain data features is not clear given this model. Feature importance can be determined using variable subset selection but this is very expensive computationally.
 
