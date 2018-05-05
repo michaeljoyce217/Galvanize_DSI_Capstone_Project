@@ -1,4 +1,3 @@
-
 ## Data Science Immersive Capstone Project - Property Crime Prediction by Neighborhood in Vancouver, BC, Canada
 This project predicts spikes in crime rates by neighborhood in Vancouver, BC, Canada. The goal is to proactively reduce criminal activity through targeted police prevention and intervention tactics.
 
@@ -121,7 +120,7 @@ All other neighborhoods
 
 <br>
 
-## Comparison to a less engineered dataset
+## Comparison to a less engineered dataset (THINKING OF PUTTING THE ACTUAL SCORES HERE IN THE APPENDIX)
 
 In both setups, the results weren't striking outside the Central Business District but these are relatively low crime areas to begin with (2.43 property crimes per day segment on average). The results were far better in the high crime Central Business District (10.59 property crimes per day segment on average), which supports the validity of the model.
 
@@ -160,7 +159,7 @@ All other neighborhoods
 
 It was initially a shock to note that the metrics were very similar with or without the new data being considered. This might imply that the added data was unnecessary. However, the feature importance varied greatly between the models, particularly in the high crime Central Business District (see appendix). In the Central Business District, using the model with extra data, the initial VPD data features were not ranked very highly in importance relative to the features from the added data.
 
-This implies that there may be significant predictive gains to be made with further investigation.
+This implies that there may be significant predictive gains to be made with further investigation. Moreover, it seems like there is a better chance of further improvements with the extra datasets.
 
 
 
@@ -186,12 +185,6 @@ This model is updated daily as weather data proved to be predictive. The Vancouv
 
 
 
-## Additional applications of this methodology
-
-
-
-TO BE COMPLETED
-<br>
 
 ## Extensions and improvements
 
@@ -208,9 +201,20 @@ TO BE COMPLETED
 * The weather data used is from the (US) National Weather Service for Bellingham airport in Washington. A web-scraping tool will be built to scrape equivalent data for Vancouver, Canada.
 
 
-## Tools used
+## Toolkit
+
+* Jupyter Notebook - integrated development environment for python; used to explore data and test code
+* Pandas - provides high-performance, easy-to-use data structures and data analysis tools for Python; used for basic data manipulation & some file reading
+* NumPy - the fundamental package for scientific computing with Python; used for math functionality
+* Sci-kit learn - data modeling library
+* XGBoost - scalable machine learning system for boosting
+* MongoDB - a NoSQL database; used for storing my scrapes
+* Pymongo - a python wrapper for MongoDB
+* Pickle - a python library for serializing objects; used for saving requests objects for later parsing
+* Datetime - a python library for time related functions
+* Matplotlib - math plotting library for python
+* Seaborn - statistical data visualization library for python
 
 
 
-TO BE COMPLETED
 <br>
