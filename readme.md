@@ -1,5 +1,5 @@
 
-## Data Science Immersive Capstone Project - Property Crime Prediction by Neighborhood in Vancouver, Canada
+## Data Science Immersive Capstone Project - Property Crime Prediction by Neighborhood in Vancouver, BC, Canada
 This project predicts spikes in crime rates by neighborhood in Vancouver, BC, Canada. The goal is to proactively reduce criminal activity through targeted police prevention and intervention tactics.
 
 
@@ -97,31 +97,27 @@ The models were evaluated using several metrics.
 The first train and test setup involved the usual test-train-split on all of the data. The results are given.
 
 Central Business District
-* R2=
-* MAE=
-* RMSE=
+* R2 = 0.42949206337502333
+* MAE = 3.07285251584
+* RMSE = 3.93125075121
 
 All other neighborhoods
-
-Central Business District
-* R2=
-* MAE=
-* RMSE=
+* R2 = 0.30417653767054731
+* MAE = 1.10146954427
+* RMSE = 1.52630997545
 
 The second train and test setup involved training the model on the data from 2003 to 2016 and using the data from 2017 as the test set.
 
 
 Central Business District
-* R2=
-* MAE=
-* RMSE=
+* R2=0.31603303901865065
+* MAE=3.58505860289
+* RMSE=4.62383884462
 
 All other neighborhoods
-
-Central Business District
-* R2=
-* MAE=
-* RMSE=
+* R2 = 0.27866945771134088
+* MAE = 1.05137735611
+* RMSE = 1.44359975183
 
 <br>
 
@@ -133,19 +129,46 @@ All of these setups were then further evaluated. This involved training the same
 * Same day segmentation as above
 * Same neighborhood segmentation as above
 
-It was initially a shock to note that the metrics were very similar in the low crime areas (values in appendix). This might imply that the added data was unnecessary. However, the metrics varied significantly in the Central Business District. Moreover, the feature importance varied greatly between the models, particularly in the high crime Central Business District.
+The first train and test setup involved the usual test-train-split on all of the data. The results are given.
+
+Central Business District
+* R2 = 0.4404134166445236
+* MAE = 3.00166645333
+* RMSE = 3.84530425352                 PUT ALL THIS IN THE APPENDIX!!!!
+
+All other neighborhoods
+* R2 = 0.29950300823917786
+* MAE = 1.10348459841
+* RMSE = 1.52476447252
+
+The second train and test setup involved training the model on the data from 2003 to 2016 and using the data from 2017 as the test set.
+
+
+Central Business District
+* R2 = 0.33075163983589795
+* MAE = 3.58069969465
+* RMSE = 4.57381700885
+
+All other neighborhoods
+* R2=0.26924793183618834
+* MAE=1.05867743692
+* RMSE=1.45299682284
+
+It was initially a shock to note that the metrics were very similar with or without the new data being considered. This might imply that the added data was unnecessary. However, the feature importance varied greatly between the models, particularly in the high crime Central Business District (see appendix). In the Central Business District, using the model with extra data, the initial VPD data features were not ranked very highly in importance relative to the features from the added data.
+
+This implies that there may be significant predictive gains to be made with further investigation.
 
 
 
 ## Conclusions
 
-The model constructed was predictive in general but much more predictive in the Central Business District. As this is where most of the crime occurs, the model may have significant value to the Vancouver Police Department.
+* The model constructed was predictive in general but much more predictive in the Central Business District. As this is where most of the crime occurs, the model may have significant value to the Vancouver Police Department.
 
-This data should be examined using time series forecasting. This may provide further insight and hopefully increase the predictive power of the model.
+* This data should be examined using time series forecasting. This may provide further insight and hopefully increase the predictive power of the model.
 
-The Central Business District should be subdivided and examine further. This is possible as the VPD data gives street, hundred block, latitude and longitude data.
+* The Central Business District should be subdivided and examine further. This is possible as the VPD data gives street, hundred block, latitude and longitude data.
 
-Data should be added or refined to the model inputs (see improvements and extensions below)
+* Data should be added or refined to the model inputs (see improvements and extensions below)
 
 <br>
 
