@@ -66,7 +66,7 @@ Day segments:
 
 Many machine learning methods were applied to these various setups and the results were recorded.
 
-Regression methods investigated:
+Methods used to perform regression:
 
 * Linear
 * Lasso
@@ -183,7 +183,7 @@ This implies that there may be significant predictive gains to be made with furt
 
 ## Delivery of predictions
 
-The predictive model is demonstrated on a webpage that is updated daily. Users are able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next 7 days of predicted property crime rates for all neighborhoods.
+The predictive model is demonstrated on a webpage that is updated daily. Users are able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next 3 days of predicted property crime rates for all neighborhoods.
 
 This model is updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process is currently run locally but will eventually run through an EC2 instance on Amazon Web Services.
 <br>
