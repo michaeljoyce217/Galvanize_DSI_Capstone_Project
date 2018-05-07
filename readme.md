@@ -21,7 +21,7 @@ This capstone project will be submitted to the VPD upon completion, in an attemp
 
 My interest in this project is derived from my love of my hometown. It is a wonderful city and beloved by many. However, it is scarred by its drug problem and the inherent property crimes that come with drug addiction. The area with the worst difficulties is locally known as the Downtown Eastside but the VPD refers to it as the Central Business District. ([ref](https://www.vice.com/en_ca/article/nev4p8/why-vancouver-has-always-been-an-addiction-ground-zero))
 
-Many different approaches are being tried to attempt to alleviate this problem. ([ref](http://www.cbc.ca/radio/ondrugs/city-on-drugs-the-dark-pull-of-vancouver-s-downtown-eastside-1.4229455)) I am hoping that I can play a small part in these efforts.
+Many different approaches are being tried to attempt to alleviate this problem. ([ref](http://www.cbc.ca/radio/ondrugs/city-on-drugs-the-dark-pull-of-vancouver-s-downtown-eastside-1.4229455)) My hope is that if property crime is reduced, the general population will have more symkpathy for the addicted.
 
 Note that Vancouver has disadvantaged neighborhoods, but they are not racially homogeneous. Therefore, I am confident that this tool will not be used for racial profiling.
 
@@ -101,9 +101,9 @@ The models were evaluated using several metrics.
 The first train and test setup involved the usual test-train-split on all of the data. The results are given.
 
 Central Business District
-* R2 = 0.42949206337502333
-* MAE = 3.07285251584
-* RMSE = 3.93125075121
+* R2 = 0.452914786444
+* MAE = 2.97881997854
+* RMSE = 3.82938893608
 
 All other neighborhoods
 * R2 = 0.30417653767054731
@@ -183,7 +183,7 @@ This implies that there may be significant predictive gains to be made with furt
 
 ## Delivery of predictions
 
-The predictive model is demonstrated on a webpage that is updated daily. Users are able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next 3 days of predicted property crime rates for all neighborhoods.
+The predictive model is demonstrated on a webpage that is updated daily. Users are able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next  days of predicted property crime rates for all neighborhoods.
 
 This model is updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process is currently run locally but will eventually run through an EC2 instance on Amazon Web Services.
 <br>
