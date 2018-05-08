@@ -215,7 +215,6 @@ This model is updated daily as weather data proved to be predictive. The Vancouv
 * XGBoost - scalable machine learning system for boosting
 * MongoDB - a NoSQL database; used for storing my scrapes
 * Pymongo - a python wrapper for MongoDB
-* Pickle - a python library for serializing objects; used for saving requests objects for later parsing
 * Datetime - a python library for time related functions
 * Matplotlib - math plotting library for python
 * Seaborn - statistical data visualization library for python
