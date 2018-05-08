@@ -159,7 +159,7 @@ def get_cpi_data():
 
 
 def get_gpd_data():
-    # import the gross domestic product for Canada, available monthly from Statistics Canada
+    # import the gross domestic product for British Columbia, available monthly from Statistics Canada
     # this will be automated in the next iteration and will be for Vancouver at best and British Columbia
     # if this is not possible
     gdp_df=pd.read_csv('data/gdp_2007dollars_nohead.csv')
@@ -592,7 +592,7 @@ def ab_cbd_model(ab_cbd_df,ab_cbd_finalinput):
     xgb=XGBRegressor(base_score=0.5, booster='gbtree', colsample_bylevel=1,
        colsample_bytree=1, gamma=0, learning_rate=0.1, max_delta_step=0,
        max_depth=3, min_child_weight=1, missing=None, n_estimators=100,
-       n_jobs=1, nthread=None, objective='reg:linear', random_state=0,
+       n_jobs=1, nthread=-1, objective='reg:linear', random_state=0,
        reg_alpha=0, reg_lambda=1, scale_pos_weight=1, seed=None,
        silent=True, subsample=1)
     xgb.fit(X_ab_cbd,y_ab_cbd)
