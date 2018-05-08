@@ -36,11 +36,12 @@ def update_databases():
 def get_police_data():
     # import the Vancouver Police Department's most recent data, available every Sunday.
     # this will be automated in the next iteration of this project
-    df=pd.read_csv('data/crime_csv_all_years.csv',parse_dates={'dttime':[1,2,3]}, keep_date_col=True)
+    df=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/crime_csv_all_years.csv',parse_dates={'dttime':[1,2,3]}, keep_date_col=True)
     # dttime added for the next step which is gatherind day of the week data
 
     # make a copy of the original data to keep an original dataframe intact
-    df_temp=df.copy()
+    df_temp2=df.dropna()
+    df_temp=df_temp2.copy()
 
     # add day of the week to original data
     df_temp['day_of_week']=df_temp['dttime'].dt.weekday_name
@@ -95,7 +96,7 @@ def get_police_data():
 def get_weather_data():
     # import the (US) National Weather Service's most recent data for Bellingham, WA, airport, available every day
     # this will be automated in the next iteration of this project and will use Vancouver weather data
-    wdf=pd.read_csv('data/BA_weather_data.csv')
+    wdf=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/BA_weather_data.csv')
 
     # make a copy of the original data to keep an original dataframe intact
     wdf2=wdf.copy()
@@ -125,13 +126,7 @@ def get_weather_data():
 def get_cpi_data():
     # import the consumer price index for Vancouver, available monthly from Statistics Canada
     # this will be automated in the next iteration
-    cpi_df=pd.read_csv('data/consumer_price_index_nohead.csv')
-    # make a copy of the original data to keep an original dataframe intact
-    cpi_df2=cpi_df.copy()
-
-    # import the consumer price index for Vancouver, available monthly from Statistics Canada
-    # this will be automated in the next iteration
-    cpi_df=pd.read_csv('data/consumer_price_index_nohead.csv')
+    cpi_df=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/consumer_price_index_nohead.csv')
     # make a copy of the original data to keep an original dataframe intact
     cpi_df2=cpi_df.copy()
 
@@ -162,7 +157,7 @@ def get_gpd_data():
     # import the gross domestic product for British Columbia, available monthly from Statistics Canada
     # this will be automated in the next iteration and will be for Vancouver at best and British Columbia
     # if this is not possible
-    gdp_df=pd.read_csv('data/gdp_2007dollars_nohead.csv')
+    gdp_df=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/gdp_2007dollars_nohead.csv')
     # make a copy of the original data to keep an original dataframe intact
     gdp_df2=gdp_df.copy()
 
@@ -190,7 +185,7 @@ def get_gpd_data():
 def get_employment_data():
     # import unemployment data for British Columbia, available monthly from Statistics Canada
     # this will be automated in the next iteration
-    emp_df=pd.read_csv('data/employment_nohead.csv')
+    emp_df=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/employment_nohead.csv')
     # make a copy of the original data to keep an original dataframe intact
     emp_df2=emp_df.copy()
 
@@ -218,7 +213,7 @@ def get_employment_data():
 def get_drug_data():
     # import drug posession data for British Columbia, available monthly from Statistics Canada
     # this will be automated in the next iteration
-    drugs_df=pd.read_csv('data/drug_offences_2006_to_2016.csv')
+    drugs_df=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/drug_offences_2006_to_2016.csv')
     # make a copy of the original data to keep an original dataframe intact
     drugs_df2=drugs_df.copy()
 
@@ -242,7 +237,7 @@ def get_drug_data():
 def get_heroin_price_data():
     # import annual heroin price data for Canada, gathered manually from various publications of the United Nations
     # this will be automated in the next iteration
-    hp_df=pd.read_csv('data/Heroin_Prices.csv')
+    hp_df=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/Heroin_Prices.csv')
     # make a copy of the original data to keep an original dataframe intacthp_df=pd.read_csv('data/Heroin_Prices.csv')
     hp_df2=hp_df.copy()
 
@@ -324,7 +319,7 @@ def create_cbd_input():
     '''
 
     # load basic template from data folder
-    df=pd.read_csv('data/cbd_template.csv')
+    df=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/cbd_template.csv')
     d1=datetime.date.today() + datetime.timedelta(days=1)
     d2=datetime.date.today() + datetime.timedelta(days=2)
     d3=datetime.date.today() + datetime.timedelta(days=3)
@@ -405,7 +400,7 @@ def create_ab_cbd_input():
     create template on which to apply the ab_cbd model
     '''
     # load basic template from data folder
-    df=pd.read_csv('data/ab_cbd_template.csv')
+    df=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/ab_cbd_template.csv')
     d1=datetime.date.today() + datetime.timedelta(days=1)
     d2=datetime.date.today() + datetime.timedelta(days=2)
     d3=datetime.date.today() + datetime.timedelta(days=3)
@@ -682,5 +677,3 @@ if __name__ == "__main__":
     result=final_output(cbd_finalout, ab_cbd_finalout)
 
     out=output_csv(result)
-
-    print(out)
