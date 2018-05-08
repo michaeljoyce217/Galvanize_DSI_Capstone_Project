@@ -68,16 +68,9 @@ Many machine learning methods were applied to these various setups and the resul
 
 Methods used to perform regression:
 
-* Linear
-* Lasso
-* Logistic
-* Elastic net
-* Bayesian ridge  
+* Lasso  
 * Random forest
 * Adaptive boosting
-* Bootstrap aggregating
-* Stochastic gradient descent
-* Gradient boosting
 * Neural networks
 * Extreme gradient boosting
 
