@@ -1,5 +1,5 @@
 ## Data Science Immersive Capstone Project - Property Crime Prediction by Neighborhood in Vancouver, BC, Canada
-This project predicts spikes in crime rates by neighborhood in Vancouver, BC, Canada. The goal is to proactively reduce criminal activity through targeted police prevention and intervention tactics.
+This project predicts the number of property crimes by neighborhood in Vancouver, BC, Canada. The goal is to proactively reduce criminal activity through targeted police prevention and intervention tactics.
 
 
 
@@ -21,7 +21,7 @@ This capstone project will be submitted to the VPD upon completion, in an attemp
 
 My interest in this project is derived from my love of my hometown. It is a wonderful city and beloved by many. However, it is scarred by its drug problem and the inherent property crimes that come with drug addiction. The area with the worst difficulties is locally known as the Downtown Eastside but the VPD refers to it as the Central Business District. ([ref](https://www.vice.com/en_ca/article/nev4p8/why-vancouver-has-always-been-an-addiction-ground-zero))
 
-Many different approaches are being tried to attempt to alleviate this problem. ([ref](http://www.cbc.ca/radio/ondrugs/city-on-drugs-the-dark-pull-of-vancouver-s-downtown-eastside-1.4229455)) My hope is that if property crime is reduced, the general population will have more symkpathy for the addicted.
+Many different approaches are being tried to attempt to alleviate this problem. ([ref](http://www.cbc.ca/radio/ondrugs/city-on-drugs-the-dark-pull-of-vancouver-s-downtown-eastside-1.4229455)) My hope is that if property crime is reduced, the general population will have more sympathy for the addicted.
 
 Note that Vancouver has disadvantaged neighborhoods, but they are not racially homogeneous. Therefore, I am confident that this tool will not be used for racial profiling.
 
@@ -38,7 +38,7 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 * Data on the price of wholesale heroin is taken from United Nations Office on Drugs and Crime.
 
 
-The information that follows might be over-technical for some readers. The slideshow presentation is more accessible if that is preferred.([ref]( https://www.youtube.com/watch?v=lE_fU4Ygur4&list=PLxtztEze-DRedrinVPfmde2jq9UKwxBzq&index=10)
+The information that follows might be over-technical for some readers. The slideshow presentation is more accessible if that is preferred.([ref]( https://www.youtube.com/watch?v=lE_fU4Ygur4&list=PLxtztEze-DRedrinVPfmde2jq9UKwxBzq&index=10))
 
 <br>
 
