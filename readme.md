@@ -133,13 +133,14 @@ All other neighborhoods (2.43 crimes expected in a given 12 hour day segment)
 * RMSE = 1.60176260601
 
 It was initially a concern to note that the metrics were very similar with or without the new data being considered. This might imply that the added data was unnecessary. However, the feature importance varied greatly between the models, particularly in the high crime Central Business District (see the graph below). In the Central Business District, using the model with extra data, the initial VPD data features were not ranked very highly in importance relative to the features from the added data.
-
+<br>
 <img align="left" src="resources/graph1.png" width="1000">
+<br>
+It can be seen in the graph that the new data features are ranked as predictive by the new model. I suspect that the date data and the economic data are correlated. As I expected, the drug related data seems to be predictive but the temperature data was a surprise, as Vancouver's weather doesn't vary that much.
 
-It can be seen in the graph that the new data features are ranked as predictive by the new model. I suspect that the date data and the economic data are correlated. As I suspected, the drug related data seems to be predictive but the temperature data was a surprise, as Vancouver's weather doesn't vary that much.
+These feature importance metrics imply that there may be significant predictive gains to be made with further investigation. Moreover, it seems like there is a better chance of further improvements with the extra datasets added to the model.
 
-This implies that there may be significant predictive gains to be made with further investigation. Moreover, it seems like there is a better chance of further improvements with the extra datasets.
-
+<br>
 
 
 ## Conclusions
@@ -158,9 +159,9 @@ This implies that there may be significant predictive gains to be made with furt
 ## Delivery of predictions
 
 The predictive model is demonstrated on a web page that is updated daily. Users choose one of three maps, one for each of the following three days. They are then able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for that three days. In addition, a data table is presented below the interactive map with that day's predicted property crime rates for all neighborhoods.
-
+<br>
 <img align="left" src="resources/graph2.png" width="1000">
-
+<br>
 
 This model is updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process is currently run locally but will eventually run through an EC2 instance on Amazon Web Services.
 <br>
@@ -181,7 +182,7 @@ This model is updated daily as weather data proved to be predictive. The Vancouv
 * The price of wholesale heroin given is given yearly and for Canada as a whole. Monthly and/or Vancouver specific data would be preferable. A request has been made to the United Nations Office on Drugs and Crime for this information.
 
 * The weather data used is from the (US) National Weather Service for Bellingham airport in Washington. A web-scraping tool will be built to scrape equivalent data for Vancouver, Canada.
-
+<br>
 
 ## Toolkit
 
