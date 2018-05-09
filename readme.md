@@ -159,7 +159,7 @@ These feature importance metrics imply that there may be significant predictive 
 
 The predictive model is demonstrated on a web page that is updated daily. Users choose one of three maps, one for each of the following three days. They are then able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for that three days. In addition, a data table is presented below the interactive map with that day's predicted property crime rates for all neighborhoods.
 <br>
-<img align="left" src="resources/graph2.png" width="800">
+<img align="left" src="resources/graph2.png" width="1000">
 <br>
 
 This model is updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process is currently run locally but will be set up to run through an EC2 instance on Amazon Web Services.
