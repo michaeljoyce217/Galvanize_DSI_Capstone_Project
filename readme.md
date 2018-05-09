@@ -35,15 +35,10 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 * The primary data is collected weekly from the Vancouver Police Department's crime database (491,459 property related crimes from 2003 to 2017). ([ref](http://data.vancouver.ca/datacatalogue/crime-data.htm))
 * Climate data is collected daily from the (US) National Weather Service with Bellingham airport in Washington acting as a substitute for Vancouver weather. The two cities are 50 miles apart and have very similar climates. (This will be changed to Vancouver specific data in future.) ([ref](https://www.weather.gov/help-past-weather))
 * Data pertaining to the number of arrests for possession of heroin and cocaine and economic data, such as unemployment rates, the consumer price index and gross national product, is taken from Statistics Canada. ([ref](http://www5.statcan.gc.ca/researchers-chercheurs/index.action?lang=eng&univ=7&search=&start=1&end=25&sort=0&themeId=0&date=&series=&author=&themeState=-1&dateState=-1&seriesState=-1&authorState=-1&showAll=false))  
-* Data on the price of wholesale heroin given is taken from United Nations Office on Drugs and Crime.
+* Data on the price of wholesale heroin is taken from United Nations Office on Drugs and Crime.
 
 
-
-
-INSERT GRAPHIC
-
-
-The information that follows might be over-technical for some readers. The slideshow presentation is more accessible if that is preferred. (INSERT LINK)
+The information that follows might be over-technical for some readers. The slideshow presentation is more accessible if that is preferred.([ref]( https://www.youtube.com/watch?v=lE_fU4Ygur4&list=PLxtztEze-DRedrinVPfmde2jq9UKwxBzq&index=10)
 
 <br>
 
