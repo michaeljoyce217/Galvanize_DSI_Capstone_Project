@@ -134,7 +134,7 @@ All other neighborhoods (2.43 crimes expected in a given 12 hour day segment)
 
 It was initially a concern to note that the metrics were very similar with or without the new data being considered. This might imply that the added data was unnecessary. However, the feature importance varied greatly between the models, particularly in the high crime Central Business District (see the graph below). In the Central Business District, using the model with extra data, the initial VPD data features were not ranked very highly in importance relative to the features from the added data.
 
-<img align="left" src="resources/graph1.png" width="200">
+<img align="left" src="resources/graph1.png" width="1000">
 
 This implies that there may be significant predictive gains to be made with further investigation. Moreover, it seems like there is a better chance of further improvements with the extra datasets.
 
