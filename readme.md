@@ -34,7 +34,7 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 
 * The primary data is collected weekly from the Vancouver Police Department's crime database (491,459 property related crimes from 2003 to 2017). ([ref](http://data.vancouver.ca/datacatalogue/crime-data.htm))
 * Climate data is collected daily from the (US) National Weather Service, with Bellingham airport in Washington acting as a substitute for Vancouver weather. The two cities are 50 miles apart and have very similar climates. (This will be changed to Vancouver specific data in future.) ([ref](https://www.weather.gov/help-past-weather))
-* Data pertaining to the number of arrests for possession of heroin and cocaine and economic data, such as unemployment rates, the consumer price index, and the gross national product, is taken from Statistics Canada, Data BC and Vancouver Open Data. ([ref](http://www5.statcan.gc.ca/researchers-chercheurs/index.action?lang=eng&univ=7&search=&start=1&end=25&sort=0&themeId=0&date=&series=&author=&themeState=-1&dateState=-1&seriesState=-1&authorState=-1&showAll=false))  
+* Data pertaining to the number of arrests for possession of heroin and cocaine and economic data, such as unemployment rates, the consumer price index, and the gross national product, are taken from Statistics Canada, Data BC and Vancouver Open Data. ([ref](http://www5.statcan.gc.ca/researchers-chercheurs/index.action?lang=eng&univ=7&search=&start=1&end=25&sort=0&themeId=0&date=&series=&author=&themeState=-1&dateState=-1&seriesState=-1&authorState=-1&showAll=false))  
 * Data on the price of wholesale heroin is taken from United Nations Office on Drugs and Crime.
 
 
@@ -84,8 +84,8 @@ The models were evaluated using several metrics.
 
 The first train and test setup involved the usual train-test-split on all of the data. 70% of the data was randomly chosen for the training set and the other 30% of the data was used for the test set. The results are given.
 
-Central Business District
-* R<sup>2</sup> = 0.443796496866 (10.62 crimes expected in a given 12 hour day segment)
+Central Business District (10.62 crimes expected in a given 12 hour day segment)
+* R<sup>2</sup> = 0.443796496866
 * MAE = 3.00336262749
 * RMSE = 3.86116934581
 
@@ -112,15 +112,14 @@ All other neighborhoods (2.43 crimes expected in a given 12 hour day segment)
 
 In both setups, the model was fairly predictive for the high crime Central Business District (10.62 property crimes per day segment on average), and less so in the other neighborhoods. This was to be expected as these neighborhoods are relatively low crime areas to begin with (2.43 property crimes per day segment on average) and the number of crimes is a discrete measure. In both cases, however, the R<sup>2</sup> scores were predictive, which supports the validity of the model.
 
-<br>
 
-One of the concerns when working with compiled datasets and machine learning algorithms is whether the added data actually had a predictive effect. To examine this, I constructed a similar model trained on a minimal dataset. This dataset consisted solely of the Vancouver Police Department data with some basic feature engineering.
+One of the concerns that must be considered when working with compiled datasets and machine learning algorithms is whether the added data actually had a predictive effect. To examine this, I constructed a similar model trained on a minimal dataset. This dataset consisted solely of the Vancouver Police Department data with some basic feature engineering.
 
-* Day of week added only
-* Same day segmentation as above
-* Same neighborhood segmentation as above
+* Day of week added
+* Same day segmentation as my model
+* Same neighborhood segmentation as my model
 
-The train and test setup involved the same train-test-split (70/30) on all of the data.
+The train and test setup involved the same train-test-split (70/30) on all of the data. The results are given.
 
 Central Business District (10.62 crimes expected in a given 12 hour day segment)
 * R<sup>2</sup> = 0.433509761701
@@ -136,7 +135,7 @@ It was initially a concern to note that the metrics were very similar with or wi
 <br>
 <img align="left" src="resources/graph1.png" width="1000">
 <br>
-It can be seen in the graph that the new data features are ranked as predictive by the new model. I suspect that the date data and the economic data are correlated. As I expected, the drug related data seems to be predictive but the temperature data was a surprise, as Vancouver's weather doesn't vary that much.
+It can be seen in the graph that the new data features are ranked as predictive by the new model. I suspect that the date data and the economic data are correlated but economic data is arguably more informative in general. As expected, the drug related data seems to be predictive. However, thepredictive nature of the temperature data was a surprise, as Vancouver's weather doesn't vary that much.
 
 These feature importance metrics imply that there may be significant predictive gains to be made with further investigation. Moreover, it seems like there is a better chance of further improvements with the extra datasets added to the model.
 
@@ -160,10 +159,10 @@ These feature importance metrics imply that there may be significant predictive 
 
 The predictive model is demonstrated on a web page that is updated daily. Users choose one of three maps, one for each of the following three days. They are then able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for that three days. In addition, a data table is presented below the interactive map with that day's predicted property crime rates for all neighborhoods.
 <br>
-<img align="left" src="resources/graph2.png" width="1000">
+<img align="left" src="resources/graph2.png" width="800">
 <br>
 
-This model is updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process is currently run locally but will eventually run through an EC2 instance on Amazon Web Services.
+This model is updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process is currently run locally but will be set up to run through an EC2 instance on Amazon Web Services.
 <br>
 
 
