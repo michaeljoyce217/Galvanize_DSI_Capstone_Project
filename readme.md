@@ -33,8 +33,8 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 ## Datasets
 
 * The primary data is collected weekly from the Vancouver Police Department's crime database (491,459 property related crimes from 2003 to 2017). ([ref](http://data.vancouver.ca/datacatalogue/crime-data.htm))
-* Climate data is collected daily from the (US) National Weather Service with Bellingham airport in Washington acting as a substitute for Vancouver weather. The two cities are 50 miles apart and have very similar climates. (This will be changed to Vancouver specific data in future.) ([ref](https://www.weather.gov/help-past-weather))
-* Data pertaining to the number of arrests for possession of heroin and cocaine and economic data, such as unemployment rates, the consumer price index and gross national product, is taken from Statistics Canada. ([ref](http://www5.statcan.gc.ca/researchers-chercheurs/index.action?lang=eng&univ=7&search=&start=1&end=25&sort=0&themeId=0&date=&series=&author=&themeState=-1&dateState=-1&seriesState=-1&authorState=-1&showAll=false))  
+* Climate data is collected daily from the (US) National Weather Service, with Bellingham airport in Washington acting as a substitute for Vancouver weather. The two cities are 50 miles apart and have very similar climates. (This will be changed to Vancouver specific data in future.) ([ref](https://www.weather.gov/help-past-weather))
+* Data pertaining to the number of arrests for possession of heroin and cocaine and economic data, such as unemployment rates, the consumer price index, and the gross national product, is taken from Statistics Canada, Data BC and Vancouver Open Data. ([ref](http://www5.statcan.gc.ca/researchers-chercheurs/index.action?lang=eng&univ=7&search=&start=1&end=25&sort=0&themeId=0&date=&series=&author=&themeState=-1&dateState=-1&seriesState=-1&authorState=-1&showAll=false))  
 * Data on the price of wholesale heroin is taken from United Nations Office on Drugs and Crime.
 
 
@@ -44,13 +44,13 @@ The information that follows might be over-technical for some readers. The slide
 
 ## Methodology
 
-Various feature engineering methods were applied to the data and each variation was tested as outline below. These involved various divisions of the neighborhoods and breaking the day into segments.
+Various feature engineering methods were applied to the data and each variation was tested as outline below. These involved various divisions of the neighborhoods, and also breaking the day into segments.
 
 Two different day segmentations were considered in each model:
 * 1200am-759am, 800am-359pm, 4pm-1159pm
 * 1200am-1159am, 1200pm-1159pm
 
-Neighborhoods were divided in two different ways due to differing crime rates and all models were trained on each subgroup individually:
+Neighborhoods were divided in two different ways due to differing crime rates. All models were trained on each subgroup individually:
 
 * Division of the neighborhoods into low crime rate, medium crime rate, and high crime rate subgroups.
 * Division of the neighborhoods into a subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods.
@@ -67,9 +67,9 @@ Methods used to perform regression:
 
 The best results were obtained by using the 1200am-1159am, 1200pm-1159pm day segmentation, which matches the shift hours of the Vancouver Police Department. It was also optimal to divide the neighborhoods into one subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods. Due to differing crime rates, separate models were trained on each subgroup of neighborhoods.
 
-In terms of models, the best results were achieved using one of the Sci-kit Learn neural network model packages. However, this model was not chosen as it is a "black box" model. That is, determining the importance of certain data features is not clear given this model. Feature importance can be determined using variable subset selection but this is computationally expensive.
+Of all the models constructed, the best results were achieved using one of the Sci-kit Learn neural network model packages. However, this model was not chosen as it is a "black box" model. That is, determining the importance of certain data features is difficult when using this model. Feature importance can be determined using variable subset selection but this is computationally expensive.
 
-The model using extreme gradient boosting came in a close second in all of the metrics used and has a measure of feature importance built in to the associated machine learning package. As a result, this was my model of choice for this project.
+The model that used extreme gradient boosting came in a close second in all of the metrics used and has a measure of feature importance built in to the associated machine learning package. As a result, this was my model of choice for this project.
 
 
 
@@ -82,7 +82,7 @@ The models were evaluated using several metrics.
 * Mean average error (MAE)- a measurement of error of the model, less affected by outliers (large errors)
 * Root Mean square error (RMSE)- a measurement of error of the model, more affected by outliers (large errors)
 
-The first train and test setup involved the usual test-train-split on all of the data. The results are given.
+The first train and test setup involved the usual train-test-split on all of the data. 70% of the data was randomly chosen for the training set and the other 30% of the data was used for the test set. The results are given.
 
 Central Business District
 * R<sup>2</sup> = 0.443796496866 (10.62 crimes expected in a given 12 hour day segment)
@@ -108,19 +108,19 @@ All other neighborhoods (2.43 crimes expected in a given 12 hour day segment)
 
 <br>
 
-## Comparison to a less engineered dataset (THINKING OF PUTTING THE ACTUAL SCORES HERE IN THE APPENDIX)
+## Comparison to a less engineered dataset
 
-In both setups, the results weren't striking outside the Central Business District but these are relatively low crime areas to begin with (2.43 property crimes per day segment on average). The results were far better in the high crime Central Business District (10.62 property crimes per day segment on average), which supports the validity of the model.
+In both setups, the model was fairly predictive for the high crime Central Business District (10.62 property crimes per day segment on average), and less so in the other neighborhoods. This was to be expected as these neighborhoods are relatively low crime areas to begin with (2.43 property crimes per day segment on average). In both cases, however, the R<sup>2</sup> scores were fairly good which supports the validity of the model.
 
 <br>
 
-All of these setups were then further evaluated. This involved training the same models on the same setups but with a minimal dataset. This dataset consisted solely of the Vancouver Police Department data with some basic feature engineering.
+One of the concerns when working with compiled datasets and machine learning algorithms is whether the added data had a predictive effect. To examine this, I constructed a similar model trained on a minimal dataset. This dataset consisted solely of the Vancouver Police Department data with some basic feature engineering.
 
 * Day of week added only
 * Same day segmentation as above
 * Same neighborhood segmentation as above
 
-The train and test setup involved the usual test-train-split on all of the data. The results are given.
+The train and test setup involved the same train-test-split (70/30) on all of the data. 
 
 Central Business District (10.62 crimes expected in a given 12 hour day segment)
 * R<sup>2</sup> = 0.433509761701
