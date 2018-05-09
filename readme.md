@@ -57,12 +57,8 @@ Two different day segmentations were considered in each model:
 
 Neighborhoods were divided in two different ways due to differing crime rates and all models were trained on each subgroup individually:
 
-* Division into low crime rate, medium crime rate, and high crime rate subgroups.
-* Division into a subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods.
-
-Day segments:
-* 1200am-759am, 800am-359pm, 4pm-1159pm
-* 1200am-1159am, 1200pm-1159pm
+* Division of the neighborhoods into low crime rate, medium crime rate, and high crime rate subgroups.
+* Division of the neighborhoods into a subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods.
 
 Many machine learning methods were applied to these various setups and the results were recorded.
 
@@ -74,7 +70,7 @@ Methods used to perform regression:
 * Neural networks
 * Extreme gradient boosting
 
-The best results were obtained by using the 1200am-1159am, 1200pm-1159pm day segmentation and the dividing the neighborhoods into one subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods. Due to differing crime rates, separate models were trained on each subgroup of neighborhoods.
+The best results were obtained by using the 1200am-1159am, 1200pm-1159pm day segmentation, which matches the shift hours of the Vancouver Police Department. It was also optimal to divide the neighborhoods into one subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods. Due to differing crime rates, separate models were trained on each subgroup of neighborhoods.
 
 In terms of models, the best results were achieved using one of the Sci-kit Learn neural network model packages. However, this model was not chosen as it is a "black box" model. That is, determining the importance of certain data features is not clear given this model. Feature importance can be determined using variable subset selection but this is very expensive computationally.
 
@@ -88,8 +84,8 @@ The model using extreme gradient boosting came in a close second in all of the m
 
 The models were evaluated using several metrics.
 * R-squared (R2)- explains the percentage of variance in the target variable explained by the model
-* Mean average error (MAE)- measurement of error of the model, less affected by outliers (large errors)
-* Root Mean square error (RMSE)- measurement of error of the model, more affected by outliers (large errors)
+* Mean average error (MAE)- a measurement of error of the model, less affected by outliers (large errors)
+* Root Mean square error (RMSE)- a measurement of error of the model, more affected by outliers (large errors)
 
 The first train and test setup involved the usual test-train-split on all of the data. The results are given.
 
@@ -176,7 +172,7 @@ This implies that there may be significant predictive gains to be made with furt
 
 ## Delivery of predictions
 
-The predictive model is demonstrated on a webpage that is updated daily. Users are able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next  days of predicted property crime rates for all neighborhoods.
+The predictive model is demonstrated on a web page that is updated daily. Users are able to click on any of Vancouver's 24 neighborhoods (shown on a map), and a predicted property crime rate will be given for that neighborhood for the next three days. In addition, a data table will be presented below the interactive map with the next  days of predicted property crime rates for all neighborhoods.
 
 This model is updated daily as weather data proved to be predictive. The Vancouver Police Department publishes their crime report weekly on Sunday while most of the other data is updated monthly. This process is currently run locally but will eventually run through an EC2 instance on Amazon Web Services.
 <br>
@@ -206,11 +202,11 @@ This model is updated daily as weather data proved to be predictive. The Vancouv
 * NumPy - the fundamental package for scientific computing with Python; used for math functionality
 * Sci-kit learn - data modeling library
 * XGBoost - scalable machine learning system for boosting
-* MongoDB - a NoSQL database; used for storing my scrapes
-* Pymongo - a python wrapper for MongoDB
 * Datetime - a python library for time related functions
 * Matplotlib - math plotting library for python
 * Seaborn - statistical data visualization library for python
+* MongoDB - a NoSQL database; will be used for storing information for the web page
+* Pymongo - a python wrapper for MongoDB
 
 
 
