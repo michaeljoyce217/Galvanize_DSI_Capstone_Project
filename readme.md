@@ -1,6 +1,4 @@
-## Galvanize Data Science Immersive Capstone Project  
-<br>
-## Property Crime Prediction by Neighborhood in Vancouver, BC, Canada
+## Galvanize Data Science Immersive Capstone Project- Property Crime Prediction by Neighborhood in Vancouver, BC, Canada
 
 This project predicts the number of property crimes by neighborhood in Vancouver, BC, Canada. The goal is to proactively reduce criminal activity through targeted police prevention and intervention tactics.
 
