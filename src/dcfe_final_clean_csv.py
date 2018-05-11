@@ -320,6 +320,7 @@ def create_cbd_input():
 
     # load basic template from data folder
     df=pd.read_csv('/Users/michaeljoyce/Desktop/Capstone/data/cbd_template.csv')
+    # add dates to the table
     d1=datetime.date.today() + datetime.timedelta(days=1)
     d2=datetime.date.today() + datetime.timedelta(days=2)
     d3=datetime.date.today() + datetime.timedelta(days=3)
