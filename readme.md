@@ -1,4 +1,7 @@
-## Data Science Immersive Capstone Project - Property Crime Prediction by Neighborhood in Vancouver, BC, Canada
+## Galvanize Data Science Immersive Capstone Project  
+
+##Property Crime Prediction by Neighborhood in Vancouver, BC, Canada
+
 This project predicts the number of property crimes by neighborhood in Vancouver, BC, Canada. The goal is to proactively reduce criminal activity through targeted police prevention and intervention tactics.
 
 
@@ -38,7 +41,9 @@ Note that Vancouver has disadvantaged neighborhoods, but they are not racially h
 * Data on the price of wholesale heroin is taken from United Nations Office on Drugs and Crime.
 
 
-The information that follows might be overly technical for some readers. The slideshow presentation is more accessible if that is preferred.([ref]( https://www.youtube.com/watch?v=lE_fU4Ygur4&list=PLxtztEze-DRedrinVPfmde2jq9UKwxBzq&index=10))
+The information that follows might be overly technical for some readers. The slideshow presentation is more accessible if that is preferred.
+
+([Slideshow presentation on youtube]( https://www.youtube.com/watch?v=lE_fU4Ygur4&list=PLxtztEze-DRedrinVPfmde2jq9UKwxBzq&index=10))
 
 <br>
 
