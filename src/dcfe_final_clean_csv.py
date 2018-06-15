@@ -481,7 +481,9 @@ def create_ab_cbd_input():
 
 
 def rearrange_input_cbd(cbd_input):
-
+    '''
+    function to rearrange columns of cbd_input
+    '''
     cbd_input2=cbd_input.copy()
     cbd_input3=cbd_input2[['tmax', 'tmin', 'year', 'month', 'day',
        'consumer_price_index', 'gdp_millions_2007',
@@ -496,6 +498,10 @@ def rearrange_input_cbd(cbd_input):
 
 
 def rearrange_input_ab_cbd(ab_cbd_input):
+    '''
+    function to rearrange columns of ab_cbd_input
+    '''
+
     ab_cbd_input2=ab_cbd_input.rename(columns={'neighborhood_Grandview Woodland':'neighborhood_Grandview-Woodland', 'neighborhood_Arbutus Ridge':'neighborhood_Arbutus Ridge'})
     ab_cbd_input3=ab_cbd_input2.copy()
     ab_cbd_input4=ab_cbd_input3[['tmax', 'tmin', 'year', 'month', 'day',
@@ -642,12 +648,18 @@ def final_output(cbd_finalout, ab_cbd_finalout):
     return result
 
 def output_csv(result):
+    '''
+    function that outputs csv file of the output of the prediction preprocess
+    '''
     out=result.to_csv('out.csv', sep=',')
 
 
 
 
 if __name__ == "__main__":
+    '''
+    run the prediction program
+    '''
 
     df_final=get_police_data()
     wdf_final=get_weather_data()
