@@ -82,7 +82,7 @@ The model that used extreme gradient boosting came in a close second in all of t
 
 The models were evaluated using several metrics.
 * R-squared score (R<sup>2</sup>)- explains the percentage of variance in the target variable explained by the model
-* Mean average error (MAE)- a measurement of error of the model, less affected by outliers (large errors)
+* Mean absolute error (MAE)- a measurement of error of the model, less affected by outliers (large errors)
 * Root Mean square error (RMSE)- a measurement of error of the model, more affected by outliers (large errors)
 
 The first train and test setup involved the usual train-test-split on all of the data. 70% of the data was randomly chosen for the training set and the other 30% of the data was used for the test set. The results are given.
