@@ -58,7 +58,7 @@ Neighborhoods were divided in two different ways due to differing crime rates. A
 * Division of the neighborhoods into low crime rate, medium crime rate, and high crime rate subgroups.
 * Division of the neighborhoods into a subgroup containing only the  Central Business District and  another subgroup containing all other neighborhoods.
 
-Many machine learning methods were applied to these various setups and the results were recorded.
+Several machine learning methods were applied to these various setups and the results were recorded.
 
 Methods used to perform regression:
 
@@ -122,7 +122,7 @@ One of the concerns that must be considered when working with compiled datasets 
 * Same day segmentation as my model
 * Same neighborhood segmentation as my model
 
-The train and test setup involved the same train-test-split (70/30) on all of the data. The results are given.
+The train and test setup involved the same train-test-split (77/25) on all of the data. The results are given.
 
 Central Business District (10.62 crimes expected in a given 12 hour day segment)
 * R<sup>2</sup> = 0.433509761701
@@ -138,7 +138,21 @@ It was initially a concern to note that the metrics were very similar with or wi
 <br>
 <img align="left" src="resources/graph1.png" width="1000">
 <br>
-It can be seen in the graph that the new data features are ranked as predictive by the new model. I suspect that the date data and the economic data are correlated but economic data is arguably more informative in general. As expected, the drug related data seems to be predictive. However, thepredictive nature of the temperature data was a surprise, as Vancouver's weather doesn't vary that much.
+It can be seen in the graph that the new data features are ranked as predictive by the new model. I suspect that the date data and the economic data are correlated but economic data is arguably more informative in general. As expected, the drug related data seems to be predictive. However, the predictive nature of the temperature data was a surprise, as Vancouver's weather doesn't vary that much on a day to day basis.
+
+The final models were built excluding the date data as such data is not generalizable while the economic data is generalizable. In addition, the seasonally adjusted unemployment data was excluded as it is obviously highly correlated with the unadjusted unemployment data and the latter was seen to be more predictive during exploratory data analysis. It is also computationally helpful to reduce the number of features in the model.
+
+The final results with this reduced dataset are given. The final results show a marked improvement in the metrics for the "All other neighborhoods" category, and a slight worsening in the metrics for the "Central Business District" category. It may be the case that separate models should be run for each category.
+
+Central Business District (10.62 crimes expected in a given 12 hour day segment)
+* R<sup>2</sup> = 0.4216753983592746
+* MAE = 3.1083255929105422
+* RMSE = 3.986584645042332                
+
+All other neighborhoods (2.43 crimes expected in a given 12 hour day segment)
+* R<sup>2</sup> = 0.3011862567417083
+* MAE = 1.0961889385257826
+* RMSE = 1.5221538220496256
 
 These feature importance metrics imply that there may be significant predictive gains to be made with further investigation. Moreover, it seems like there is a better chance of further improvements with the extra datasets added to the model.
 
