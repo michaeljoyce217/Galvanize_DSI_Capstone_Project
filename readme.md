@@ -85,7 +85,7 @@ The models were evaluated using several metrics.
 * Mean absolute error (MAE)- a measurement of error of the model, less affected by outliers (large errors)
 * Root Mean square error (RMSE)- a measurement of error of the model, more affected by outliers (large errors)
 
-The first train and test setup involved the usual train-test-split on all of the data. 70% of the data was randomly chosen for the training set and the other 30% of the data was used for the test set. The results are given.
+The first train and test setup involved the usual train-test-split on all of the data. 75% of the data was randomly chosen for the training set and the other 25% of the data was used for the test set. The results are given.
 
 Central Business District (10.62 crimes expected in a given 12 hour day segment)
 * R<sup>2</sup> = 0.443796496866
@@ -122,7 +122,7 @@ One of the concerns that must be considered when working with compiled datasets 
 * Same day segmentation as my model
 * Same neighborhood segmentation as my model
 
-The train and test setup involved the same train-test-split (77/25) on all of the data. The results are given.
+The train and test setup involved the same train-test-split (75/25) on all of the data. The results are given.
 
 Central Business District (10.62 crimes expected in a given 12 hour day segment)
 * R<sup>2</sup> = 0.433509761701
@@ -140,9 +140,9 @@ It was initially a concern to note that the metrics were very similar with or wi
 <br>
 It can be seen in the graph that the new data features are ranked as predictive by the new model. I suspect that the date data and the economic data are correlated but economic data is arguably more informative in general. As expected, the drug related data seems to be predictive. However, the predictive nature of the temperature data was a surprise, as Vancouver's weather doesn't vary that much on a day to day basis.
 
-The final models were built excluding the date data as such data is not generalizable while the economic data is generalizable. In addition, the seasonally adjusted unemployment data was excluded as it is obviously highly correlated with the unadjusted unemployment data and the latter was seen to be more predictive during exploratory data analysis. It is also computationally helpful to reduce the number of features in the model.
+The final models were built excluding the date data as such data is not generalizable while the economic data is generalizable. In addition, the seasonally adjusted unemployment data was excluded as it is obviously highly correlated with the unadjusted unemployment data and the latter was seen to be more predictive during exploratory data analysis. It is also computationally advantageous to reduce the number of features in the model.
 
-The final results with this reduced dataset are given. The final results show a marked improvement in the metrics for the "All other neighborhoods" category, and a slight worsening in the metrics for the "Central Business District" category. It may be the case that separate models should be run for each category.
+The final results with this reduced dataset are given. Compared to the previous model, the final results show a marked improvement in the metrics for the "All other neighborhoods" category, and a slight worsening in the metrics for the "Central Business District" category. It may be the case that separate models should be constructed for each category.
 
 Central Business District (10.62 crimes expected in a given 12 hour day segment)
 * R<sup>2</sup> = 0.4216753983592746
@@ -189,13 +189,13 @@ This model is updated daily as weather data proved to be predictive. The Vancouv
 
 * Examine the predictive model using time series data analysis.
 
-* Set up the EC2 instance to update automatically.
+* Set up the EC2 instance to update the data and predictions automatically.
 
 * The Central Business District has a uniquely high crime rate, hence has been considered separately in the predictive model. However, the Vancouver Police Department releases the hundred block and street, as well as the latitude and the longitude, of each incident. Build a separate predictive model for this neighborhood that predicts by city block.
 
-* The illegal drug possession data currently being used is annually for British Columbia (BC) as a whole. A request has been made to the BC government for monthly data specific to Vancouver.
+* The illegal drug possession data currently being used is reported annually for British Columbia (BC) as a whole. A request has been made to the BC government for monthly data specific to Vancouver.
 
-* The price of wholesale heroin given is given yearly and for Canada as a whole. Monthly and/or Vancouver specific data would be preferable. A request has been made to the United Nations Office on Drugs and Crime for this information.
+* The price of wholesale heroin given is reported yearly and for Canada as a whole. Monthly and/or Vancouver specific data would be preferable. A request has been made to the United Nations Office on Drugs and Crime for this information.
 
 * The weather data used is from the (US) National Weather Service for Bellingham airport in Washington. A web-scraping tool will be built to scrape equivalent data for Vancouver, Canada.
 <br>
